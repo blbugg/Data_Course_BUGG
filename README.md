@@ -9,3 +9,4 @@ Mama always said life is like a box of chocolates
 Cocaine's a hell of a drug
 I'm the real slim shady
 Life's not fair is it
+If you have a turkey neck and remember the industrial revolution get out of congress
