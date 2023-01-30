@@ -36,6 +36,7 @@ vector3 + 1 # can't add 1 to "a"
 
 
 # Logical expressions (pay attention to these...they are used ALL THE TIME)
+
 vector1 > 3
 vector1 >= 3
 vector1 < 5
@@ -157,24 +158,42 @@ dbinom(50,100,.5) # probability of getting exactly 50 heads out of 100 coin flip
 
 seq(2,150,2) # here's the code to get a list of the even numbers between 2 and 150
 
+row_odd <- seq_len(nrow(iris)) %% 2 #created a row indicator
+row_odd #printed row indicator
 
+iris_row_odd <- iris[row_odd == 1, ] #subset of odd rows
+iris_row_odd #print odd rows
+
+iris_row_even <- iris[row_odd == 0, ] #subset of even rows 
+iris_row_even #print even rows
 
 # 2.  Create a new object called iris_chr which is a copy of iris, except where every column is a character class
 
+sapply(iris, class)
 
+iris_chr <- data.frame(iris)
+
+chr <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width", "Species")
+iris_chr <- type.convert(chr, as.is = TRUE)
+
+sapply(iris_chr, class)
 
 # 3.  Create a new numeric vector object named "Sepal.Area" which is the product of Sepal.Length and Sepal.Width
 
-
+iris$Sepal.Area <- iris$Sepal.Length * iris$Sepal.Width
+str(iris)
+iris
 
 # 4.  Add Sepal.Area to the iris data frame as a new column
 
-
+#The new column was added in the 3rd question with the first command-Brittany
 
 # 5.  Create a new dataframe that is a subset of iris using only rows where Sepal.Area is greater than 20 
       # (name it big_area_iris)
 
+big_area_iris <- subset(iris, Sepal.Area > 20)
 
+big_area_iris
 
 # 6.  Upload the last numbered section of this R script (with all answers filled in and tasks completed) 
       # to canvas
