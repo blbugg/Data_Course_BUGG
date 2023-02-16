@@ -18,6 +18,8 @@ names(USArrests)
 url <- "https://unherd.com/wp-content/uploads/2022/02/2GettyImages-1186593831-scaled-1.jpg"
 img <- jpeg::readJPEG("~/Downloads/deep_fried_meme.jpeg")
 
+#img: https://pbs.twimg.com/media/EQdNIplX0AIZepm.jpg
+
 
 ugliest_plot <- ggplot(USArrests, aes(x = UrbanPop,
                          y = Murder), ) +
@@ -38,16 +40,19 @@ ugliest_plot <- ggplot(USArrests, aes(x = UrbanPop,
         axis.title.y = element_text(size = 30, 
                                     color = "#FF10F0", 
                                     face = 'bold', 
-                                    hjust = 0.8), 
+                                    hjust = 0.5,
+                                    angle = 95), 
         axis.text = element_text(size = 30, 
                                color = "#8c592d", 
                                angle = 180, 
                                face = 'bold', 
                                hjust = 0.15)) +
   ggtitle("Путь_Путина") +
-  theme(plot.title = element_text(hjust = 0.35, 
+  theme(plot.title = element_text(hjust = 0.35,
+                                  vjust = 0.5,
                                   size = 56, 
                                   color = "#FFFF00", 
                                   angle = 180, 
                                   face = 'bold')) 
+
 
