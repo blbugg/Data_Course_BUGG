@@ -74,12 +74,14 @@ clean_data_w_means <- cleaner_data %>%
 
 head(cleaner_data)
 
-clean_data_w_means %>%
-  group_by(mean_u5mr, year) %>%
+BUGG_Plot_2 <- clean_data_w_means %>%
+  group_by(country_name) %>%
   ggplot(aes(x=year, y=mean_u5mr, color=continent)) +
   geom_line()
 
 #6. Save that plot as LASTNAME_Plot_2.png (5 pts)
+
+BUGG_Plot_2
 
 #7. Create three models of U5MR (20 pts)
 
