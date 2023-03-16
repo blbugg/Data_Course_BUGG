@@ -38,7 +38,7 @@ cleanish_data$year <- as.numeric(as.character(cleanish_data$year))
 class(cleanish_data$year)
 
 #omitting the redundant column of "region" (continent AND region are not 
-#necessary in my mind)
+#necessary in my mind), #cleanish_data includes NA values.
 cleanish_data = select(cleanish_data, -region,)
 
 #3. Plot each country’s U5MR (mortality_rate) over time (20 points)
@@ -46,9 +46,11 @@ cleanish_data = select(cleanish_data, -region,)
 #- Facet by continent
 
 #dropping the na's, new dataframe with na's absent
+
 cleaner_data <- cleanish_data %>% drop_na()
 
-#line plot
+#line plot, facet by continent
+
 BUGG_Plot_1 <-
   ggplot(cleaner_data, aes(x = year, y = u5mr)) +
   geom_line(size = 0.08) +
@@ -68,16 +70,23 @@ BUGG_Plot_1
 #- Another line plot (not smooth trend line)
 #- Colored by continent
 
+# data set with mean U5mr for each country
+
 clean_data_w_means <- cleaner_data %>% 
   group_by(country_name) %>% 
   mutate(mean_u5mr = mean(u5mr))
 
 head(cleaner_data)
 
+#This looks nothing like the one from your instructions, I got 
+# through the first 4 questions over spring break and thought I could handle it,
+# then it was too late to ask for help when I hit this one. So much time spent
+# trying to figure this out and got nowhere, so I'm sorry :(.
+
 BUGG_Plot_2 <- clean_data_w_means %>%
   group_by(country_name) %>%
   ggplot(aes(x=year, y=mean_u5mr, color=continent)) +
-  geom_line()
+  geom_line() 
 
 #6. Save that plot as LASTNAME_Plot_2.png (5 pts)
 
@@ -137,5 +146,10 @@ predict(mod3) %>% plot()
 ecuador_data <- dplyr::filter(cleanish_data, country_name %in% c("Ecuador"))
 predict(mod3, newdata = ecuador_data)
 
+# Either I am not reading the prediction model right, or I did it incorrectly,
+# but what I am seeing is that in 2015, it would be 131.35? Which is 10 times 
+# more than reality. It seems under #60, that matches with 2020, but I can't 
+# understand how it would be that far in the future, making me lean towards the
+# conclusion that I did something wrong somewhere.
 
 
