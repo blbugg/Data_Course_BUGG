@@ -1,0 +1,63 @@
+---
+title: "Final Project"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+knitr::include_graphics("~/Desktop/Data_Course_BUGG/Media/andrew_sharpe.png")
+
+```
+
+## A man named "Andrew Sharpe"...
+
+On the morning of October 9 in the year 2020, Andrew Sharpe was surfing with seven of his friends in Wylie Bay, Western Australia near the town of Esperance. As Sharpe and the
+other surfers were awaiting their next wave, a massive predator was waiting below.
+
+Sharpe was struck with massive force by great white shark, reported to be 15 feet in length, propelling itself from the ocean floor, sending his body flying through the air. His friends quickly acted, and as Sharpe floated at the surface with obvious injury (he had also been bitten on the leg in the process of being initially struck), they tried desperately to swim to him and get him on a board and back to the beach to get help. As a friend got closer, the shark returned and pulled Sharpe under, and he was never seen again. Authorities recovered his surfboard, with obvious bite marks from a large great white. After three days of searching,
+all that was found were pieces of his wet suit. 2020 was the most deadly year Australia
+has had in terms of shark attacks since 1929.
+
+I feel like these events are somewhat of a paradox. Such a tragic, and to be honest, 
+graphic event, and if it were to happen where a human attacked another human in such
+a way (obviously, not the exact same), the outrage and thirst for justice and in some
+cases, calls for the blood of the perpetrator, can be heard around the world. But
+sharks cannot be held to the same standard when such an event occurs. As our population
+grows and climate change continues to alter ecosystems everywhere, sharks are only
+trying to adapt and survive. They don't worship serial killers or have a list of human
+enemies to cross off of a list, they are simply acting on instinct.
+
+Shark attacks (trying to now be called "accidents", which is more fitting I feel)
+throughout a wide span of time have been recorded into a file known as the "Global
+Shark Attack File" (GSAF). Something that particularly interested me about the case of 
+Andrew Sharpe was that he was eaten (assumed, with a lot of evidence). That is 
+an incredibly rare phenomenon. The file records injuries and fatalities, but not
+necessarily those consumed among the fatalities. 
+
+Something to note with the datasets provided is that the "International Shark Attack
+File" was not established until 1958. Because of this, there are a lot of inconsistencies
+in some of the data that may be displayed. There are people around the world reporting
+these incidents, meaning there is no uniform format for inputting the data.
+
+This project aims to see where, when, and by which species a human may be consumed
+by a shark, but will also analyze the data as a whole. I cannot emphasize this 
+enough, but even with the overwhelmingly graphic stories, I will always remain 
+"Team Shark", as I feel we all should be.I have gained what most would call 
+irrational, but I call a healthy fear and respect for the ocean and sharks 
+especially. I am incredibly grateful to have been born a land based organism,
+ya know what I'm sayin'?
+
+
+```{r}
+
+```
+
+## The big 4...
+
+South Africa, Australia, Reunion Island (not a country), and USA.
+
+```{r, echo=FALSE}
+```
+
+
