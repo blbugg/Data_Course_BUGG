@@ -14,7 +14,7 @@ df <- read.csv("./cleaned_covid_data.csv") #read in the new data frame as "df"
 
 #II. Subset the data set to just show states that begin with "A" and save this as an object called A_states. (20 pts)
 
-df_A <- df[grepl("^A", df$Province_State),] # used grepl to subset only "A" states
+A_states <- df[grepl("^A", df$Province_State),] # used grepl to subset only "A" states
 
 # Use the *tidyverse* suite of packages
 # Selecting rows where the state starts with "A" is tricky (you can use the grepl() function or just a vector of those states if you prefer)
@@ -25,7 +25,7 @@ df_A <- df[grepl("^A", df$Province_State),] # used grepl to subset only "A" stat
 # + Add loess curves WITHOUT standard error shading
 # + Keep scales "free" in each facet
 
-df_A %>% 
+A_states %>% 
   ggplot(aes(x = Last_Update, y = Deaths)) +
   geom_point() + # chose geom_point because it is a scatter plot
   geom_smooth(se = FALSE) + # made sure to indicate no standard error shading, "se" indicates confidence interval, put FALSE since it is TRUE by default. 
@@ -72,7 +72,8 @@ state_max_fatality_rate %>%
 state_max_fatality_rate %>% 
   ggplot(aes(x = Province_State, y = Maximum_Fatality_Ratio, color = Province_State, fill = Province_State)) +
   geom_col() +
-  theme(axis.text.x = element_text(angle = 90))
+  theme(axis.text.x = element_text(angle = 90)) +
+  theme(legend.position = "none")
 
 
 # VI. (BONUS 10 pts)
@@ -80,7 +81,7 @@ state_max_fatality_rate %>%
 # + You'll need to read ahead a bit and use the dplyr package functions group_by() and summarize() to accomplish this.
 
 bonus <- df %>% 
-  rename(Date = Last_Update) %>% # renamed it for me own sake, I kept putting in date and couldn't figure out why it wouldn't work haha.
+  rename(Date = Last_Update) %>% # renamed it for my own sake, I kept putting in date and couldn't figure out why it wouldn't work haha.
   group_by(Date) %>% #grouped together by date
   summarise(Deaths = sum(Deaths)) %>% #summarized by getting the sum of deaths by the grouped dates.
   ungroup() 
