@@ -2,11 +2,14 @@
 
 #TASKS:
 
+install.packages("scales")
+
 library(tidyverse)
 library(janitor)
 library(dplyr)
 library(ggplot2)
 library(lubridate)
+library(scales)
 
 #I. Read the cleaned_covid_data.csv file into an R data frame. (20 pts)
 
@@ -92,5 +95,6 @@ bonus %>%
   ggplot(aes(x = Date, y = Deaths, color = "red")) +
   geom_line() + 
   scale_x_date(date_breaks = "3 months", date_labels = "%b %Y") + # a little less overwhelming to see the dates chunked together.
+  scale_y_continuous(labels = scales::comma) + # including commas on the y axis to make it a little easier to read.
   labs(x = "Date", y = "Deaths", title = "COVID-19 Deaths over Time in the United States") + # labeled for a little more practice.
   theme_minimal() + theme(legend.position = "none") # minimal theme is cleaner, and with the addition of the red color, it came with an unnecessary legend. 
